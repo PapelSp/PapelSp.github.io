@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicialização das funcionalidades
     initSmoothScrolling();
     initReadingProgress();
-    initPrintFunctionality();
     initAccessibilityFeatures();
 });
 
@@ -54,56 +53,11 @@ function initReadingProgress() {
     });
 }
 
-// Funcionalidade de impressão
-function initPrintFunctionality() {
-    // Adiciona botão de impressão
-    const printButton = document.createElement('button');
-    printButton.innerHTML = '🖨️ Imprimir';
-    printButton.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #007bff;
-        color: white;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 25px;
-        cursor: pointer;
-        font-size: 14px;
-        box-shadow: 0 4px 12px rgba(0,123,255,0.3);
-        transition: all 0.3s ease;
-        z-index: 1000;
-    `;
-
-    // Efeitos hover
-    printButton.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px)';
-        this.style.boxShadow = '0 6px 16px rgba(0,123,255,0.4)';
-    });
-
-    printButton.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.boxShadow = '0 4px 12px rgba(0,123,255,0.3)';
-    });
-
-    // Funcionalidade de impressão
-    printButton.addEventListener('click', function() {
-        window.print();
-    });
-
-    document.body.appendChild(printButton);
-}
 
 // Melhorias de acessibilidade
 function initAccessibilityFeatures() {
     // Adiciona navegação por teclado
     document.addEventListener('keydown', function(e) {
-        // Ctrl + P para imprimir
-        if (e.ctrlKey && e.key === 'p') {
-            e.preventDefault();
-            window.print();
-        }
-        
         // Escape para voltar ao topo
         if (e.key === 'Escape') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
