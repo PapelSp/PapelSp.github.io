@@ -53,6 +53,7 @@ function initReadingProgress() {
     });
 }
 
+// Funcionalidade de impressão removida
 
 // Melhorias de acessibilidade
 function initAccessibilityFeatures() {

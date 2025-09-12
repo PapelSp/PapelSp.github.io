@@ -88,12 +88,97 @@ body {
     font-weight: 500;
 }
 
+/* Últimas Notícias */
+.latest-news {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.news-item {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.news-image {
+    flex: 0 0 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    transition: transform 0.3s ease;
+}
+
+.news-item:hover .news-img {
+    transform: scale(1.05);
+}
+
+.news-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-title {
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+.news-lead {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 500;
+}
+
 /* Rodapé */
 .footer {
     background-color: #2c2c2c;
     color: white;
     padding: 40px 0;
-    margin-top: 50px;
+    margin-top: 0;
 }
 
 .about-section h3 {
@@ -139,6 +224,31 @@ body {
     .main-content {
         padding: 30px 0;
     }
+    
+    .latest-news {
+        padding: 40px 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .news-item {
+        flex-direction: column;
+    }
+    
+    .news-image {
+        flex: none;
+        height: 200px;
+    }
+    
+    .news-content {
+        padding: 15px;
+    }
+    
+    .news-title {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -152,6 +262,18 @@ body {
     
     .article-lead {
         padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .news-title {
+        font-size: 1.1rem;
+    }
+    
+    .news-lead {
+        font-size: 0.9rem;
     }
 }
 
